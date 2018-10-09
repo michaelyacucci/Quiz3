@@ -44,4 +44,20 @@ public class Deck {
 	{
 		return cardsInDeck.size();
 	}
+	
+	public int getRemaining(Object eNum) {
+		
+		int count = 0;
+		for (Card c : cardsInDeck) {
+			if(eNum instanceof eRank) {
+				if(c.geteRank() == eNum)
+					count++;
+			}else if(eNum instanceof eSuit) {
+				if(c.geteSuit() == eNum)
+					count++;
+			}
+		}
+		return count;
+	}
+	
 }
